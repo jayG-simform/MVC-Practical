@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Test2";
+}
+<label id="lblMessage" hidden>@ViewBag.Message</label>
+
+<div>
+    <button value="PRINT TEXT" class="btn btn-primary" onclick="BtnPrint()">PRINT TEXT</button>
+
+    <button value="BOLD" class="btn btn-primary" onclick="BtnBold()">BOLD</button>
+
+    <button value="ITALIC" class="btn btn-primary" onclick="BtnItalic()">ITALIC</button>
+
+    <button value="UNDERLINE" class="btn btn-primary" onclick="BtnUnderline()">UNDERLINE</button>
+
+    <button value="RESET" class="btn btn-outline-secondary" onclick="BtnReset()">RESET</button>
+</div>
+
+
+<script>
+    var lblMsg = document.getElementById("lblMessage");
+
+    function BtnPrint() {
+        lblMsg.hidden = false;
+    }
+    function BtnBold() {
+        lblMsg.style.fontWeight = "bold";
+    }
+    function BtnItalic() {
+        lblMsg.style.fontStyle = "italic";
+    }
+    function BtnUnderline() {
+        lblMsg.style.textDecoration = "underline";
+    }
+    function BtnReset() {
+        lblMsg.removeAttribute('style');
+    }
+
+</script>
