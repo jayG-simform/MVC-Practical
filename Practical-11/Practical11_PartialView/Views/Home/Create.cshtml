@@ -1,0 +1,25 @@
+﻿@model Practical11_PartialView.Models.Employee
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="my-5" style="width:50%;">
+    <h2>Create</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.Partial("_Create", Model)
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index", String.Empty, new { @class = "btn btn-warning mt-3" })
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

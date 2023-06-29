@@ -1,0 +1,22 @@
+﻿@model Practical11_PartialView.Models.Employee
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="my-5" style="width:50%;">
+    <h2 class="mb-3">Edit</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.Partial("_Edit", Model)
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index", String.Empty, new { @class = "btn btn-warning mt-3" })
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

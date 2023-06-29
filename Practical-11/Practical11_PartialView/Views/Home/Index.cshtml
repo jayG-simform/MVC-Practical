@@ -1,0 +1,11 @@
+﻿﻿@model IEnumerable<Practical11_PartialView.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create", string.Empty, htmlAttributes: new { @class = "btn btn-primary" })
+</p>
+
+@Html.Partial("_List", Model)
