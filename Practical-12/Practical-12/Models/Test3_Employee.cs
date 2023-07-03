@@ -26,8 +26,8 @@ namespace Practical_12.Models
         [Required]
         public decimal Salary { get; set; }
 
-        [Required]
+        [ForeignKey("designation")]
         public int DesignationId { get; set; }
-
+        public Test3_Designation designation { get; set; }
     }
 }

@@ -102,9 +102,9 @@ namespace Practical_12.Services
                 {
                     CountEmpByDesination employee = new CountEmpByDesination()
                     {
-                        FirstName = (string)reader["First Name"],
-                        MiddleName = (reader["Middle Name"] ?? "NA") as string,
-                        LastName = (string)reader["Last Name"],
+                        FirstName = (string)reader["FirstName"],
+                        MiddleName = (reader["MiddleName"] ?? "NA") as string,
+                        LastName = (string)reader["LastName"],
                         Designation = (string)reader["Designation"]
                     };
 
