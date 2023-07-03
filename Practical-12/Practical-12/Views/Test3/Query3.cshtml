@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Practical_12.Models.CountEmpByDesination>
+
+@{
+    ViewBag.Title = "Query3";
+}
+
+<h2>Display some records</h2>
+<br />
+<table class="table text-center table-hover">
+    <tr class="table-dark">
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation)
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("Back to List", "Index", string.Empty,new {@class="btn btn-success"})

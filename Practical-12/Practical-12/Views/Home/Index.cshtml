@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Practical_12.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employee List</h2>
+
+<p>
+    @Html.ActionLink("Insert Record", "InsertDefault", "", new { @class = "btn btn-primary" })
+    @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-info" })
+
+</p>
+<table class="table text-center">
+    <tr class="table-hover table-dark">
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("First Name to 'SQLPerson'", "FirstNameToSQL", "", new { @class = "btn btn-warning" })
+@Html.ActionLink("Middle Name to 'I'", "MiddleNameTOI", "", new { @class = "btn btn-primary" })
+@Html.ActionLink("Delete Id value less than 2", "DeleteValue2", "", new { @class = "btn btn-info" })
+@Html.ActionLink("Delete All", "DeleteAll", "", new { @class = "btn btn-danger" })

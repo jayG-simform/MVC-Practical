@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Practical_12.Models.Test2>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employee List</h2>
+
+<p>
+    @Html.ActionLink("Insert Record", "InsertDefault", "", new { @class = "btn btn-primary" })
+    @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-info" })
+</p>
+<table class="table text-center">
+    <tr class="table-hover table-dark">
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.ActionLink("Total-Salary", "TotalSalary", "", new { @class = "btn btn-warning" })
+@Html.ActionLink("DOB less than 01-01-2000", "FindEmp","", new { @class = "btn btn-info" }) 
+@Html.ActionLink("Middle Name NULL", "MiddleNameNull","", new { @class = "btn btn-success" })
+<br />
+<br />
+<label style="font-size:25px;font-weight:bold">@TempData["Message"]</label>

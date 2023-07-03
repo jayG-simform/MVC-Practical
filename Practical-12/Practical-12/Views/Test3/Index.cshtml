@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Practical_12.Models.Test3_Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employee list</h2>
+
+@Html.ActionLink("Insert new Designation Data", "Query1", string.Empty, new { @class = "btn btn-success my-2 mx-2" })
+@Html.ActionLink("Insert new Employee Data", "Query_1", string.Empty, new { @class = "btn btn-success my-2 mx-2" })
+<br /><br />
+<table class="table text-center table-hover">
+    <tr class="table-dark">
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DesignationId)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesignationId)
+            </td>
+        </tr>
+    }
+
+</table>
+<label style="font-size:20px; text-align:center; color:indianred">@TempData["Message"]</label>
+<div class="text-warning font-monospace" style="font-size:20px"> Various Functionalities : </div>
+
+<div>
+
+    @Html.ActionLink("CountEmployee by Designation", "Query2", string.Empty, new { @class = "btn btn-success my-2 mx-2" })
+    @Html.ActionLink("Fetch some data", "Query3", string.Empty, new { @class = "btn btn-success my-2 mx-2" })
+    @Html.ActionLink("Show The data from View", "Query4", string.Empty, new { @class = "btn btn-success my-2 mx-2" })
+    @Html.ActionLink("Create Stored Procedure for Designation Table", "Query5", string.Empty, new { @class = "btn btn-success my-2 mx-2" })
+    @Html.ActionLink("Create Stored Procedure for Employee Table", "Query6", string.Empty, new { @class = "btn btn-success my-2 mx-2" })
+    @Html.ActionLink("Designation Which Have More than One Employee", "Query7", string.Empty, new { @class = "btn btn-success my-2 mx-2" })
+    @Html.ActionLink("Get The Data Which are sorted by Date of birth", "Query8", string.Empty, new { @class = "btn btn-success my-2 mx-2" })
+    @Html.ActionLink("Get the data which are sorted by First Name", "Query9", string.Empty, new { @class = "btn btn-success my-2 mx-2" })
+    @Html.ActionLink("Find Max Salary Employees", "Query11", string.Empty, new { @class = "btn btn-success" })
+    @Html.ActionLink("create clustered index", "Query10", string.Empty, new { @class = "btn btn-success" })
+
+</div>
