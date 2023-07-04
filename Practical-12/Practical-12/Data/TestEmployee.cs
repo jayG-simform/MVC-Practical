@@ -169,26 +169,15 @@ namespace Practical_12.Services
                 return employeeWithDesignationModels;
             }
         }
-        public void CreateView()
-        {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Employe"].ConnectionString))
-            {
-                con.Open();
-                string sql = "CREATE VIEW EmployeeView AS SELECT e.Id, FirstName, MiddleName, LastName, Designation, DOB, MobileNumber, Address, Salary FROM Employee_Test3 e Inner join Designation d on e.DesignationId = d.Id";
-                SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
-        }
         public void CreateTheStoreProcedureForInsertInDesignationTable()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Employe"].ConnectionString))
             {
                 con.Open();
-                var sql = @"create procedure InsertDesignation 
-                                Designation varchar(50) 
+                var sql = @"create or alter procedure InsertDesignation 
+                                @Designation varchar(50) 
                                 as begin 
-                                Insert into Designation values(Designation) 
+                                Insert into Designation values(@Designation) 
                             end";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.ExecuteNonQuery();
@@ -200,7 +189,7 @@ namespace Practical_12.Services
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Employe"].ConnectionString))
             {
                 con.Open();
-                var sql = @"create procedure InsertEmployee
+                var sql = @"create or alter procedure InsertEmployee
 	                            @FirstName varchar(50),
 	                            @MiddleName varchar(50),
 	                            @LastName varchar(50),
