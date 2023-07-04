@@ -11,23 +11,23 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Name) :
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Name)
-        </dd>
+        </dd><br />
 
         <dt>
-            @Html.DisplayNameFor(model => model.Designation)
+            @Html.DisplayNameFor(model => model.Designation) :
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Designation)
-        </dd>
+        </dd><br />
 
         <dt>
-            @Html.DisplayNameFor(model => model.Salary)
+            @Html.DisplayNameFor(model => model.Salary) :
         </dt>
 
         <dd>
@@ -37,6 +37,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID },new {@class="btn btn-success"}) |
+    @Html.ActionLink("Back to List", "Index",string.Empty,new {@class="btn btn-primary"})
 </p>
