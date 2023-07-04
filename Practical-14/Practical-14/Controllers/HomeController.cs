@@ -17,11 +17,11 @@ namespace Practical_14.Controllers
         {
             return View(db.Employees.ToList().ToPagedList(i ?? 1,10));
         }
-        public JsonResult SearchEmployee(string search)
+        public JsonResult SearchEmployee(string search,int? i)
         {
             if (search == "")
             {
-                return Json(db.Employees.ToList());
+                return Json(db.Employees.ToList().ToPagedList(i ?? 1, 10));
             }
             return Json(db.Employees.Where(e => e.Name.ToLower().StartsWith(search.ToLower()) || search == null), JsonRequestBehavior.AllowGet);
         }
