@@ -1,0 +1,88 @@
+﻿@model IPagedList<Practical_14.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+
+@using PagedList;
+@using PagedList.Mvc;
+
+<h2>Employee List</h2>
+<div class="mb-3">
+        <p>
+            @Html.ActionLink("Create New", "Create","",new { @class="btn btn-primary"})
+        </p>
+    <div class="float-end d-flex align-items-center">
+        @Html.TextBox("search", "", htmlAttributes: new { @placeholder = "Search By Name..", id = "search", @class = "form-control d-inline mx-3" })
+    </div>
+</div>
+
+<table class="table text-center table-hover">
+    <thead>
+        <tr class="table-dark">
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.First().Name)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.First().DOB)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.First().Age)
+            </th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+        
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DOB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class="btn btn-success me-1"}) 
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary" }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id },new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.PagedListPager(Model,i=>Url.Action("Index","Home",new {i}))
+@section scripts{
+    <script>
+    $(document).ready(function () {
+        $("#search").keyup(function (e) {
+            var url = "@Url.Content("~/Home/SearchEmployee")";
+            $.ajax({
+                url,
+                method: "POST",
+                data: { search: e.target.value },
+                success: (data) => {
+                    $("#tbody").empty();    
+                    $.each(data, (index, d) => {
+                        $("#tbody").append(`<tr class="text-center">
+                                    <td>${d.Name}</td>
+                                    <td>${new Date(parseInt(d.DOB.replace('/Date(', ''))).toLocaleDateString()}</td>
+                                    <td>${d.Age}</td>
+                                    <td> <a class="btn btn-success me-1" href="Home/Edit/${d.Id}">Edit</a>
+                                         <a class="btn btn-primary" href="/Home/Details/${d.Id}">Details</a>
+                                         <a class="btn btn-danger" href="/Home/Delete/${d.Id}">Delete</a>
+                        </td></tr>`)
+                    })
+                },
+                error: (err) => {
+                    console.log(err);
+                }
+            });
+        });
+    });
+   </script>
+}
