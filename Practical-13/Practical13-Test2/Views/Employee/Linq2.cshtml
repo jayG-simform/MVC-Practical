@@ -1,0 +1,30 @@
+﻿@model List<Practical13_Test2.Models.EmpCount>
+
+@{
+    ViewBag.Title = "Linq2";
+}
+<h2>Count number of records</h2>
+<br />
+<table class="table text-center table-hover">
+    <tr class="table-dark">
+        <th>
+            @Html.DisplayNameFor(model => model[0].Designations)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Empcount)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Designations)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empcount)
+        </td>
+    </tr>
+}
+
+</table>
+@Html.ActionLink("Back to List","Index",string.Empty,new {@class="btn btn-success"})

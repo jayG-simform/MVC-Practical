@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Practical13_Test2.Models.Designation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Designation List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create",string.Empty, new { @class = "btn btn-primary" })
+</p>
+<table class="table text-center table-hover">
+    <tr class="table-dark">
+        <th>
+            @Html.DisplayNameFor(model => model.DesignationName)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DesignationName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id },new {@class="btn btn-warning"}) 
+            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @class = "btn btn-info" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

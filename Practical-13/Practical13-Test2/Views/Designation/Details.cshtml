@@ -1,0 +1,36 @@
+﻿@model Practical13_Test2.Models.Designation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-3">Designation Details</h4>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DesignationName)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DesignationName)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+                    <div class="views">
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+                    </div>
+                    <div class="stats">
+                        @Html.ActionLink("Back to List", "Index", String.Empty, new { @class = "btn btn-danger" })
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

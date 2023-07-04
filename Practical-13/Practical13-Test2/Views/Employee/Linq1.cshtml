@@ -1,0 +1,74 @@
+﻿@model List<Practical13_Test2.Models.EmpDesg>
+
+@{
+    ViewBag.Title = "Linq1";
+}
+<h2>List the Employee</h2>
+<br />
+
+<table class="table table-hover text-center">
+    <tr class="table-dark">
+        <th>
+            @Html.DisplayNameFor(model => model[0].Emp.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Emp.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Emp.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Emp.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Desg.DesignationName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Emp.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Emp.MobileNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Emp.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].Emp.Salary)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp.MiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desg.DesignationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp.Salary)
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("Back to List", "Index", string.Empty, new { @class = "btn btn-success" })
