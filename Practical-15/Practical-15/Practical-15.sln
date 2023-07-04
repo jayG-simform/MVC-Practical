@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practical-15", "Practical-15\Practical-15.csproj", "{47A06C9A-403E-4FF1-AFCC-575CC0728455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practical-15_FormAuth", "Practical-15_FormAuth\Practical-15_FormAuth.csproj", "{7FBE0ECF-102A-42A6-86BD-53C54589EE5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47A06C9A-403E-4FF1-AFCC-575CC0728455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47A06C9A-403E-4FF1-AFCC-575CC0728455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47A06C9A-403E-4FF1-AFCC-575CC0728455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47A06C9A-403E-4FF1-AFCC-575CC0728455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FBE0ECF-102A-42A6-86BD-53C54589EE5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBE0ECF-102A-42A6-86BD-53C54589EE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBE0ECF-102A-42A6-86BD-53C54589EE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBE0ECF-102A-42A6-86BD-53C54589EE5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6240D4AA-CECD-4CFE-B5EA-0A13E555B858}
+	EndGlobalSection
+EndGlobal
